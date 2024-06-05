@@ -6,6 +6,20 @@ TagManager:
   tags:
   - Platform
   - Object
+  - Potion
+  - Axe
+  - Core
+  - PickAxe
+  - Wall
+  - Wood Wall
+  - Audio
+  - Worlds
+  - LevelEnd
+  - Game Manager
+  - Crucial Wall
+  - Key
+  - Spikes
+  - Briefing
   layers:
   - Default
   - TransparentFX

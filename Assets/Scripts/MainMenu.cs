@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour
     public AudioMixer audioMusicMixer;
     public AudioMixer audioSFXMixer;
 
+    [SerializeField] private Slider musicSlider;
+
     public TMP_Dropdown resolutionDropdown; 
     Resolution[] resolutions;
 
@@ -21,7 +23,7 @@ public class MainMenu : MonoBehaviour
         resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions();
-
+        Debug.Log("Passou a linha 25");
         List<string> options = new List<string>();
 
         int currentResolutionIndex = 0;
@@ -41,6 +43,7 @@ public class MainMenu : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
+        Debug.Log("Fez o Start");
 
     }
 
@@ -66,7 +69,9 @@ public class MainMenu : MonoBehaviour
 
     public void SetVolumeMusic(float music)
     {
-        audioMusicMixer.SetFloat("music", music);
+        float volume = musicSlider.value;
+        
+        audioMusicMixer.SetFloat("music", Mathf.Log10(music)*20);
     }
 
     public void SetVolumeSFX(float sfx)
